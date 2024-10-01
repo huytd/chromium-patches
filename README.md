@@ -2,7 +2,7 @@
 
 This repo contains selective patches for the Chromium project that I use for my personal browser. 
 
-## Project setup
+## How to use
 
 Follow the following guides to clone the Chromium source code and build on macOS:
 
@@ -15,6 +15,18 @@ Current Chromium version:
 git checkout tags/131.0.6748.1
 ```
 
+You can copy the `patches` directory from this repository into your local Chromium's `src`. Then, apply the patch you want, for example:
+
+```
+git apply patches/allowManifestV2.patch
+```
+
+Then run the build:
+
+```
+autoninja -C out/Default chrome
+```
+
 ## Patches
 
-- Allow ManifestV2 extensions (so Ublock Origin can work)
+- [Allow ManifestV2 extensions](patches/allowManifestV2.patch) (so Ublock Origin can work)
